@@ -7,24 +7,27 @@ body {
     color: antiquewhite;
 }
 
+main {
+    height: 100vh;
+    scroll-behavior: smooth;
+    overflow: auto;
+    scroll-snap-type: y proximity;
+}
+
 section {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 400px;
-    padding: 100px 20vw;
+    min-height: 100vh;
+    scroll-snap-align: start;
 }
 
 h1 {
-    margin: 0;
+    font-size: 3em;
+    text-align: center;
 }
 
 h2 {
     margin: 0;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
+p {
+    margin: 0;
 }

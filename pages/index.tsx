@@ -1,6 +1,10 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import KUTE from 'kute.js'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import React from 'react'
+import WaveSection from '../components/WaveSection'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
@@ -12,48 +16,44 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-      <div className={styles.navbarContainer}>
-          <h1 className={styles.navbarItem}>About</h1>
-          <h1 className={styles.navbarItem}>Experience</h1>
-          <h1 className={styles.navbarItem}>Education</h1>
-          <h1 className={styles.navbarItem}>Competences</h1>
-          <h1 className={styles.navbarItem}>Projects</h1>
-      </div>
+      <main className={`${styles.main} ${styles.scroller}`}>
         <section>
-          <h1>Elias Frykholm</h1>
-          <p>Fullstack Developer</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem assumenda fugiat, quidem similique corporis vitae totam illum vel, consectetur ea perferendis nesciunt! Recusandae quibusdam quam aspernatur quae ut beatae maxime!</p>
+          <div className={styles.about}>
+            <Image src="/profile-image.jpeg" width='200px' height='200px' className={styles.avatar}/>  
+            <h1>Elias Frykholm</h1>
+              <p>Msc. in Computer Science</p>
+              <p>Fullstack Engineer</p>
+          </div>
         </section>
+
         <section>
-          <h1>Nice Curves</h1>
-          <p>Accusamus earum modi, iusto quos dicta ipsa corrupti id quae nulla eaque laboriosam dolorem saepe aliquid reiciendis hic beatae obcaecati corporis fuga, provident quidem. Est non voluptatibus eos explicabo. Eaque?</p>
-        </section>
-        <section>
-          <h1>Nice Curves</h1>
-          <p>Vel molestiae laboriosam ullam voluptatum illum, itaque ratione quos illo veniam provident consectetur dolorem autem odio harum perspiciatis vero, voluptate sit dicta beatae. Rerum deleniti perferendis eligendi adipisci facilis aliquid?</p>
-        </section>
-        <section>
-          <h1>Nice Curves</h1>
-          <p>Quaerat eligendi, doloribus quas aperiam eos quibusdam ad reiciendis eaque commodi est veritatis officiis tenetur aut molestiae ullam et perspiciatis illum a minus consectetur ea distinctio maxime error aliquam. Laudantium!</p>
-        </section>
-        <section>
-          <h1>Nice Curves</h1>
-          <p>Officia voluptatum iste fuga ad? Nihil cupiditate fugiat necessitatibus dignissimos quae velit voluptas excepturi, vitae illo quasi inventore qui hic repellendus! Nulla iusto reprehenderit expedita eaque pariatur sint amet voluptate?</p>
-        </section>
-        <section>
-          <h1>Nice Curves</h1>
-          <p>Voluptas architecto nihil magni, possimus minus facere, harum corrupti, suscipit natus ipsum atque quae? Odio, asperiores! Praesentium sed, minus sint eligendi debitis vel cum dolorem fugiat facere consectetur, nemo dolor.</p>
-        </section>
-        <section>
-          <h1>Nice Curves</h1>
-          <p>Soluta repellat molestias sint id blanditiis officiis eum vitae tempora dolore harum! Aspernatur rem assumenda ut, aliquam laboriosam quibusdam nihil eaque ullam, illum reiciendis error ipsam? Sequi corrupti amet blanditiis.</p>
-        </section>
-        <section>
-          <h1>Nice Curves</h1>
-          <p>Neque ex voluptatem minus saepe error nam esse dignissimos quas a et ad cum voluptas, veritatis excepturi, consequuntur harum suscipit repudiandae quod! Voluptas ipsa eum consequuntur, eius doloribus magni quod!</p>
+        <h1>Experience</h1>
+        <WaveSection color="#9db08e">
+          <h2>Cygni, Part of Accenture - Fullstack Engineer Consultant</h2>
+          <h3>Malmö, Sweden - September 2021 -> Now</h3>
+          <p>Elias together with two other Cygni talents created a web application for booking rooms and desks at the Cygni Syd office  using mob-programming. The application uses a React Frontend with Google SSO  and connections to the Google Calender API as backend. A simple node.js express backend with sqlite was also written during development for testing purposes. The application was then deployed using AWS Amplify.</p>
+        </WaveSection>
+        <WaveSection color="#8ea081">
+          <h2>Axis Communications - Master Thesis Student</h2>
+          <h3>Lund, Sweden - October 2021 -> June 2021</h3>
+          <p>Axis Communications AB is a Swedish manufacturer of network based solutions in the areas of physical safety and camera surveillance.
+I did my master thesis in monitoring of large scale distributed software systems. The goal of the thesis was to explore the possibilities of discovering different types of network faults between the nodes in the systems, both within and outside kubernetes clusters using a recent technology, service mesh. This involved creating a virtualized test-environment consisting of multiple virtual machines running different services, connected through a simulated network where faults could be introduced. A series of tests were carried out in order to evaluate if the faults could be discovered using the service mesh. The result of the master thesis was that network faults could to some extent be discovered using the solution and could be applicable in some cases. The problems experienced were mainly due to using service mesh in a way it is not intended for.
+</p>
+        </WaveSection>
+        <WaveSection color="#90a88b">
+          <h2>Axis Communications - Master Thesis Student</h2>
+          <h3>Lund, Sweden - October 2021 -> June 2021</h3>
+          <p>Axis Communications AB is a Swedish manufacturer of network based solutions in the areas of physical safety and camera surveillance.
+I did my master thesis in monitoring of large scale distributed software systems. The goal of the thesis was to explore the possibilities of discovering different types of network faults between the nodes in the systems, both within and outside kubernetes clusters using a recent technology, service mesh. This involved creating a virtualized test-environment consisting of multiple virtual machines running different services, connected through a simulated network where faults could be introduced. A series of tests were carried out in order to evaluate if the faults could be discovered using the service mesh. The result of the master thesis was that network faults could to some extent be discovered using the solution and could be applicable in some cases. The problems experienced were mainly due to using service mesh in a way it is not intended for.
+</p>
+        </WaveSection>
         </section>
       </main>
+    <div className={styles.sidebar}>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
     </div>
   )
 }

@@ -1,25 +1,92 @@
-.navbar {
-    display: flex;
-    flex: 1;
-    justify-content: space-evenly;
-    align-items: center;
-    position: sticky;
-    top: 0px;
+.sidebar {
+    margin: 10px 0px 0px 10px;
+    width: 60px;
+    /* Set the width of the sidebar */
+    position: fixed;
+    /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: #001122;
+    /* Black */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 20px;
+    border-radius: 10px;
+    border-color: #90a88b;
+    border-width: 5px;
+    border-style: solid;
+    min-height: 400px;
 }
 
-.navbarContainer {
+.sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.about {
+    position: relative;
     display: flex;
-    flex: 1;
-    justify-content: space-evenly;
-    height: 70px;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0 30px 0;
+    background-image: url("/about-background.svg");
+}
+
+.blobMotion {
+    position: absolute;
+    transform: translateY(-20%);
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+.spacer {
+    aspect-ratio: 960/60;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    position: sticky;
-    top: 0px;
-    z-index: 1;
-    background-image: url('/navbar-waves.svg');
-    color: #001122;
-    padding-top: 10px;
+}
+
+.layer1 {
+    background-image: url("/wave1.svg");
+}
+
+.layer1Color {
+    background-color: #9db08e;
+}
+
+.layer2 {
+    background-image: url("/wave2.svg");
+}
+
+.layer2Color {
+    background-color: #8ea081;
+}
+
+.layer3 {
+    background-image: url("/wave3.svg");
+}
+
+.layer3Color {
+    background-color: #90a88b;
+}
+
+.layer4 {
+    background-image: url("/wave4.svg");
+}
+
+.layer4Color {
+    background-color: #9cb797;
+}
+
+.layer5 {
+    background-image: url("/end-wave.svg");
 }
