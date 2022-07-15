@@ -1,11 +1,11 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import KUTE from 'kute.js'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
 import WaveSection from '../components/WaveSection'
 import styles from '../styles/Home.module.css'
+import { IconContext } from 'react-icons'
+import { FaUser, FaBriefcase, FaGraduationCap, FaSlidersH, FaThLarge } from 'react-icons/fa'
 
 const Home: NextPage = () => {
   return (
@@ -16,10 +16,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={`${styles.main} ${styles.scroller}`}>
+      <main>
         <section>
           <div className={styles.about}>
-            <Image src="/profile-image.jpeg" width='200px' height='200px' className={styles.avatar}/>  
+              <Image src="/profile-image.jpeg" width={300} height={300} className={styles.avatar}/>  
             <h1>Elias Frykholm</h1>
               <p>Msc. in Computer Science</p>
               <p>Fullstack Engineer</p>
@@ -47,12 +47,56 @@ I did my master thesis in monitoring of large scale distributed software systems
 I did my master thesis in monitoring of large scale distributed software systems. The goal of the thesis was to explore the possibilities of discovering different types of network faults between the nodes in the systems, both within and outside kubernetes clusters using a recent technology, service mesh. This involved creating a virtualized test-environment consisting of multiple virtual machines running different services, connected through a simulated network where faults could be introduced. A series of tests were carried out in order to evaluate if the faults could be discovered using the service mesh. The result of the master thesis was that network faults could to some extent be discovered using the solution and could be applicable in some cases. The problems experienced were mainly due to using service mesh in a way it is not intended for.
 </p>
         </WaveSection>
+        <WaveSection color="#90a88f">
+          <h2>Axis Communications - Master Thesis Student</h2>
+          <h3>Lund, Sweden - October 2021 -> June 2021</h3>
+          <p>Axis Communications AB is a Swedish manufacturer of network based solutions in the areas of physical safety and camera surveillance.
+I did my master thesis in monitoring of large scale distributed software systems. The goal of the thesis was to explore the possibilities of discovering different types of network faults between the nodes in the systems, both within and outside kubernetes clusters using a recent technology, service mesh. This involved creating a virtualized test-environment consisting of multiple virtual machines running different services, connected through a simulated network where faults could be introduced. A series of tests were carried out in order to evaluate if the faults could be discovered using the service mesh. The result of the master thesis was that network faults could to some extent be discovered using the solution and could be applicable in some cases. The problems experienced were mainly due to using service mesh in a way it is not intended for.
+</p>
+        </WaveSection>
+        <WaveSection color="#90a90b">
+          <h2>Axis Communications - Master Thesis Student</h2>
+          <h3>Lund, Sweden - October 2021 -> June 2021</h3>
+          <p>Axis Communications AB is a Swedish manufacturer of network based solutions in the areas of physical safety and camera surveillance.
+I did my master thesis in monitoring of large scale distributed software systems. The goal of the thesis was to explore the possibilities of discovering different types of network faults between the nodes in the systems, both within and outside kubernetes clusters using a recent technology, service mesh. This involved creating a virtualized test-environment consisting of multiple virtual machines running different services, connected through a simulated network where faults could be introduced. A series of tests were carried out in order to evaluate if the faults could be discovered using the service mesh. The result of the master thesis was that network faults could to some extent be discovered using the solution and could be applicable in some cases. The problems experienced were mainly due to using service mesh in a way it is not intended for.
+</p>
+        </WaveSection>
+        <WaveSection color="#90a88b">
+          <h2>Axis Communications - Master Thesis Student</h2>
+          <h3>Lund, Sweden - October 2021 -> June 2021</h3>
+          <p>Axis Communications AB is a Swedish manufacturer of network based solutions in the areas of physical safety and camera surveillance.
+I did my master thesis in monitoring of large scale distributed software systems. The goal of the thesis was to explore the possibilities of discovering different types of network faults between the nodes in the systems, both within and outside kubernetes clusters using a recent technology, service mesh. This involved creating a virtualized test-environment consisting of multiple virtual machines running different services, connected through a simulated network where faults could be introduced. A series of tests were carried out in order to evaluate if the faults could be discovered using the service mesh. The result of the master thesis was that network faults could to some extent be discovered using the solution and could be applicable in some cases. The problems experienced were mainly due to using service mesh in a way it is not intended for.
+</p>
+        </WaveSection>
+        <WaveSection color="#90a88b" isBottom={true}>
+          <h2>Axis Communications - Master Thesis Student</h2>
+          <h3>Lund, Sweden - October 2021 -> June 2021</h3>
+          <p>Axis Communications AB is a Swedish manufacturer of network based solutions in the areas of physical safety and camera surveillance.
+I did my master thesis in monitoring of large scale distributed software systems. The goal of the thesis was to explore the possibilities of discovering different types of network faults between the nodes in the systems, both within and outside kubernetes clusters using a recent technology, service mesh. This involved creating a virtualized test-environment consisting of multiple virtual machines running different services, connected through a simulated network where faults could be introduced. A series of tests were carried out in order to evaluate if the faults could be discovered using the service mesh. The result of the master thesis was that network faults could to some extent be discovered using the solution and could be applicable in some cases. The problems experienced were mainly due to using service mesh in a way it is not intended for.
+</p>
+        </WaveSection>
+        </section>
+        <section>
+          <h1>
+            Education
+          </h1>
+        <WaveSection color="#90a88b">
+          <h2>Lund University - Master of Science, Computer Science</h2>
+          <h3>Lund, Sweden - August 2016 -> June 2021</h3>
+          <p>Axis Communications AB is a Swedish manufacturer of network based solutions in the areas of physical safety and camera surveillance.
+I did my master thesis in monitoring of large scale distributed software systems. The goal of the thesis was to explore the possibilities of discovering different types of network faults between the nodes in the systems, both within and outside kubernetes clusters using a recent technology, service mesh. This involved creating a virtualized test-environment consisting of multiple virtual machines running different services, connected through a simulated network where faults could be introduced. A series of tests were carried out in order to evaluate if the faults could be discovered using the service mesh. The result of the master thesis was that network faults could to some extent be discovered using the solution and could be applicable in some cases. The problems experienced were mainly due to using service mesh in a way it is not intended for.
+</p>
+        </WaveSection>
         </section>
       </main>
     <div className={styles.sidebar}>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
+      <IconContext.Provider value={{ size: "30" }}>
+        <FaUser/>
+        <FaBriefcase/>
+        <FaGraduationCap/>
+        <FaSlidersH/>
+        <FaThLarge/>
+      </IconContext.Provider>
     </div>
     </div>
   )

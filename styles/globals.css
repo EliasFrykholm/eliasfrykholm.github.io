@@ -7,16 +7,8 @@ body {
     color: antiquewhite;
 }
 
-main {
-    height: 100vh;
-    scroll-behavior: smooth;
-    overflow: auto;
-    scroll-snap-type: y proximity;
-}
-
 section {
     min-height: 100vh;
-    scroll-snap-align: start;
 }
 
 h1 {
