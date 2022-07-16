@@ -18,30 +18,24 @@
     justify-content: space-around;
 }
 
-.sidebar a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-}
-
 .about {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 30px 0 30px 0;
-    background-image: url("/about-background.svg");
-}
-
-.blobMotion {
-    position: absolute;
-    transform: translateY(-20%);
 }
 
 .avatar {
     border-radius: 50%;
+}
+
+.background {
+    height: 100%;
+    width: 100%;
+    background-image: url("/background.svg");
+    background-repeat: repeat-y;
+    background-position: center;
 }
 
 .spacer {
@@ -50,40 +44,4 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-}
-
-.layer1 {
-    background-image: url("/wave1.svg");
-}
-
-.layer1Color {
-    background-color: #9db08e;
-}
-
-.layer2 {
-    background-image: url("/wave2.svg");
-}
-
-.layer2Color {
-    background-color: #8ea081;
-}
-
-.layer3 {
-    background-image: url("/wave3.svg");
-}
-
-.layer3Color {
-    background-color: #90a88b;
-}
-
-.layer4 {
-    background-image: url("/wave4.svg");
-}
-
-.layer4Color {
-    background-color: #9cb797;
-}
-
-.layer5 {
-    background-image: url("/end-wave.svg");
 }
