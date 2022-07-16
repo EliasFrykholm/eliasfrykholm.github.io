@@ -2,14 +2,14 @@ import styles from '../styles/Wave.module.css'
 import { useState, useEffect, useRef } from 'react';
 
 type Props = {
-    color: string;
     isBottom: boolean;
     scrollOffset: number;
+    color: string;
 }
 
 const maxOffset = 5000-960;
 
-function Wave ({ color, isBottom, scrollOffset }: Props) {
+function Wave ({ isBottom, scrollOffset, color }: Props) {
     const offset = useRef(randomNumberInRange(0, maxOffset));
 
     return (
