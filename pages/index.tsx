@@ -26,7 +26,13 @@ const Home: NextPage = () => {
       </Head>
       <Navbar />
 
-      <main className={styles.background} style={{ backgroundPositionY: offsetY * 0.5 }}>
+      <main
+        className={styles.background}
+        style={{
+          backgroundPositionY: offsetY * 0.5,
+          backgroundImage: `url(${process.env.NODE_ENV == "production" ? "/my-resume" : ""}/background.svg)`,
+        }}
+      >
         <section id="about">
           <div className={styles.about}>
             <Image src="./profile-image.jpeg" width={300} height={300} className={styles.avatar} />

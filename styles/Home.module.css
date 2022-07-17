@@ -33,7 +33,6 @@
 .background {
     height: 100%;
     width: 100%;
-    background-image: url("/background.svg");
     background-repeat: repeat-y;
     background-position: center;
 }
