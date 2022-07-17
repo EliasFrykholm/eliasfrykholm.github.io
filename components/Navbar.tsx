@@ -1,5 +1,5 @@
-import styles from "../styles/Navbar.module.css";
 import { Link } from "react-scroll";
+import styles from "../styles/Navbar.module.css";
 
 type Props = {};
 

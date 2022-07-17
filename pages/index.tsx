@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
+import SkillGrid from "../components/SkillGrid";
 import WaveSection from "../components/WaveSection";
 import styles from "../styles/Home.module.css";
 
@@ -28,7 +29,7 @@ const Home: NextPage = () => {
       <main className={styles.background} style={{ backgroundPositionY: offsetY * 0.5 }}>
         <section id="about">
           <div className={styles.about}>
-            <Image src="/profile-image.jpeg" width={300} height={300} className={styles.avatar} />
+            <Image src="./profile-image.jpeg" width={300} height={300} className={styles.avatar} />
             <h1>Elias Frykholm</h1>
             <p>Msc. in Computer Science</p>
             <p>Fullstack Engineer</p>
@@ -162,6 +163,16 @@ const Home: NextPage = () => {
               due to using service mesh in a way it is not intended for.
             </p>
           </WaveSection>
+        </section>
+        <section id="skills">
+          <h1>Skills</h1>
+          <SkillGrid
+            skills={[
+              { name: "Java", score: 9 },
+              { name: ".NET", score: 6 },
+              { name: "React JS", score: 7 },
+            ]}
+          ></SkillGrid>
         </section>
       </main>
     </div>
