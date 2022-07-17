@@ -19,21 +19,49 @@
     display: flex;
     align-items: center;
     height: 5rem;
-    filter: grayscale(100%) opacity(0.7);
     transition: 500ms;
+    background-color: var(--secondary-color);
 }
 
-.navbar li:hover {
+.navbar li:hover svg {
     filter: grayscale(0%) opacity(1);
+}
+
+.navbar li:hover .tooltiptext {
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
 }
 
 .active li {
-    filter: grayscale(0%) opacity(1);
     background-color: #162330;
+}
+
+.active li svg {
+    filter: grayscale(0%) opacity(1);
 }
 
 .navbar svg {
     fill: var(--primary-color);
+    filter: grayscale(100%) opacity(0.7);
     min-width: 2rem;
     margin: 0 1.5rem;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    background-color: inherit;
+    text-align: center;
+    border-radius: 0 1rem 1rem 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 5rem;
+    height: 5rem;
+    z-index: -1;
+    color: var(--text-light);
+    padding: 0 1.5rem 0 1.5rem;
+    white-space: nowrap;
+    min-width: 7rem;
+    transform: translate3d(-100px, 0, 0);
+    transition: all .15s ease-in-out;
 }
