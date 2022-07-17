@@ -1,10 +1,22 @@
+:root {
+    --bg-color: #001122;
+    --text-light: antiquewhite;
+    --primary-color: hsl(126, 16%, 56%);
+    --secondary-color: #1a2836;
+    --navbar-color: #001132;
+}
+
 html,
 body {
     padding: 0;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background-color: #001122;
-    color: antiquewhite;
+    background-color: var(--bg-color);
+    color: var(--text-light);
+}
+
+main {
+    margin: 0 0 0 5rem;
 }
 
 section {

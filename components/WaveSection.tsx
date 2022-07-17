@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import styles from '../styles/WaveSection.module.css'
 import Wave from './Wave';
 
