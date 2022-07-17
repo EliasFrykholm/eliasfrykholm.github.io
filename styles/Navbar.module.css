@@ -3,7 +3,7 @@
     height: 100vh;
     position: fixed;
     z-index: 1;
-    background-color: var(--navbar-color);
+    background-color: var(--secondary-color);
 }
 
 .navbar ul {
@@ -20,11 +20,16 @@
     align-items: center;
     height: 5rem;
     filter: grayscale(100%) opacity(0.7);
+    transition: 500ms;
 }
 
 .navbar li:hover {
     filter: grayscale(0%) opacity(1);
-    background-color: black;
+}
+
+.active li {
+    filter: grayscale(0%) opacity(1);
+    background-color: #162330;
 }
 
 .navbar svg {

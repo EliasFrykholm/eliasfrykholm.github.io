@@ -26,7 +26,7 @@ const Home: NextPage = () => {
       <Navbar />
 
       <main className={styles.background} style={{ backgroundPositionY: offsetY * 0.5 }}>
-        <section>
+        <section id="about">
           <div className={styles.about}>
             <Image src="/profile-image.jpeg" width={300} height={300} className={styles.avatar} />
             <h1>Elias Frykholm</h1>
@@ -35,7 +35,7 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-        <section>
+        <section id="experience">
           <h1>Experience</h1>
           <WaveSection scrollOffset={offsetY} index={0}>
             <h2>Cygni, Part of Accenture - Fullstack Engineer Consultant</h2>
@@ -144,7 +144,7 @@ const Home: NextPage = () => {
             </p>
           </WaveSection>
         </section>
-        <section>
+        <section id="education">
           <h1>Education</h1>
           <WaveSection scrollOffset={offsetY} index={1}>
             <h2>Lund University - Master of Science, Computer Science</h2>
