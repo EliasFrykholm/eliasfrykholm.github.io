@@ -14,7 +14,7 @@ type Props = {
 function SkillCard({ skill, index }: Props) {
   const hue = baseColorHue + index * 10;
   const saturation = baseColorSat;
-  const light = baseColorLight - index * 2;
+  const light = baseColorLight;
   const color = `hsl(${hue}, ${saturation}%, ${light}%)`;
 
   return (
