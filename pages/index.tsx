@@ -27,7 +27,6 @@ const Home: NextPage = () => {
       <Navbar />
 
       <main
-        className={styles.background}
         style={{
           backgroundPositionY: offsetY * 0.5,
           backgroundImage: `url(${process.env.NODE_ENV == "production" ? "/my-resume" : ""}/background.svg)`,

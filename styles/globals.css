@@ -16,6 +16,10 @@ body {
 
 main {
     margin: 0 0 0 5rem;
+    height: 100%;
+    width: 100%-5rem;
+    background-repeat: repeat-y;
+    background-position: center;
 }
 
 section {

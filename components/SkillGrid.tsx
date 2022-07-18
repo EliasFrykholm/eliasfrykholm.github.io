@@ -13,9 +13,11 @@ type Skill = {
 function SkillGrid({ skills }: Props) {
   return (
     <div className={styles.container}>
-      {skills.map((skill, index) => (
-        <SkillCard skill={skill} index={index}></SkillCard>
-      ))}
+      {skills
+        .sort((a, b) => b.score - a.score)
+        .map((skill, index) => (
+          <SkillCard skill={skill} index={index}></SkillCard>
+        ))}
     </div>
   );
 }
