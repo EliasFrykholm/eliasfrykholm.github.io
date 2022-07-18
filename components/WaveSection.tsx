@@ -18,7 +18,7 @@ function WaveSection({ isBottom = false, scrollOffset, index, children }: Props)
 
   return (
     <div>
-      <Wave isBottom={false} scrollOffset={scrollOffset} color={color} previousColor={prevColor} />
+      <Wave scrollOffset={scrollOffset} color={color} previousColor={prevColor} />
       <div className={styles.container} style={{ backgroundColor: color }}>
         {children}
       </div>
