@@ -24,7 +24,7 @@ function Wave({ scrollOffset, color, previousColor }: Props) {
       >
         <defs>
           <filter id="shadow">
-            <feDropShadow dx="-0.2" dy="-0.4" stdDeviation="3" flood-color="var(--bg-color)" floodOpacity={0.7} />
+            <feDropShadow dx="-0.2" dy="-0.4" stdDeviation="3" floodColor="var(--bg-color)" floodOpacity={0.7} />
           </filter>
         </defs>
         <rect

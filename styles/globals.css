@@ -16,10 +16,20 @@ body {
     color: var(--text-light);
 }
 
+@media only screen and (max-width: 600px) {
+    main {
+        margin: 0 0 5rem 0;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    main {
+        margin: 0 0 0 5rem;
+    }
+}
+
 main {
-    margin: 0 0 0 5rem;
     height: 100%;
-    width: 100%-5rem;
     background-repeat: repeat-y;
     background-position: center;
 }

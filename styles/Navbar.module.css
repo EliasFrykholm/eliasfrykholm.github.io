@@ -1,6 +1,34 @@
+@media only screen and (max-width: 600px) {
+    .navbar {
+        height: 5rem;
+        width: 100vw;
+        bottom: 0;
+    }
+    .navbar ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .navbar {
+        width: 5rem;
+        height: 100vh;
+    }
+    .navbar li:hover svg {
+        filter: grayscale(0%) opacity(1);
+    }
+    .navbar li:hover .tooltiptext {
+        visibility: visible;
+        transform: translate3d(0, 0, 0);
+    }
+    .navbar ul {
+        flex-direction: column;
+    }
+}
+
 .navbar {
-    width: 5rem;
-    height: 100vh;
+    margin: 0;
     position: fixed;
     z-index: 1;
     background-color: var(--secondary-color);
@@ -11,7 +39,6 @@
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
@@ -21,15 +48,6 @@
     height: 5rem;
     transition: 500ms;
     background-color: var(--secondary-color);
-}
-
-.navbar li:hover svg {
-    filter: grayscale(0%) opacity(1);
-}
-
-.navbar li:hover .tooltiptext {
-    visibility: visible;
-    transform: translate3d(0, 0, 0);
 }
 
 .active li {

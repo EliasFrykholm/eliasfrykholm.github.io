@@ -1,6 +1,6 @@
 import { Link } from "react-scroll";
 import styles from "../styles/Navbar.module.css";
-import { ReactNode, useEffect } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { generateColor, generateHslString } from "../static/ColorGenerator";
 

@@ -1,5 +1,5 @@
 import styles from "../styles/SkillCard.module.css";
-import { generateColor, generateGradient, generateHslString, HslColor } from "../static/ColorGenerator";
+import { generateGradient, generateHslString, HslColor } from "../static/ColorGenerator";
 
 type Skill = {
   name: string;
@@ -8,18 +8,16 @@ type Skill = {
 
 type Props = {
   skill: Skill;
-  key: string;
   color: HslColor;
 };
 
-function SkillCard({ skill, key, color }: Props) {
+function SkillCard({ skill, color }: Props) {
   return (
     <div
       className={styles.card}
       style={{
         background: generateGradient(color, 45, { hue: 40, saturation: 30, light: 10 }, true),
       }}
-      key={key}
     >
       <h2>{skill.name}</h2>
       <div
