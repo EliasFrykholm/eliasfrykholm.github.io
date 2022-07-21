@@ -1,5 +1,5 @@
 import styles from "../styles/SkillCard.module.css";
-import { baseColorHue, baseColorSat, baseColorLight } from "../static/Constants";
+import { generateColor, generateGradient, generateHslaString, generateHslString } from "../static/ColorGenerator";
 
 type Skill = {
   name: string;
@@ -12,29 +12,35 @@ type Props = {
 };
 
 function SkillCard({ skill, index }: Props) {
-  const hue = baseColorHue + index * 10;
-  const saturation = baseColorSat;
-  const light = baseColorLight;
-  const color = `hsl(${hue}, ${saturation}%, ${light}%)`;
+  const color = generateColor(index);
+  color.saturation += 10;
 
   return (
     <div
       className={styles.skillCard}
       style={{
-        background: `linear-gradient(45deg, ${color} 0%, hsla(${hue + 50}, ${saturation + 40}%, ${light}%, 0.7) 100%)`,
+        background: generateGradient(color, 45, { hue: 40, saturation: 30, light: 10 }, true),
       }}
     >
       <h2>{skill.name}</h2>
       <div
         className={styles.skillIndicatorContainer}
-        style={{ backgroundColor: `hsl(${hue}, ${saturation + 20}%, ${light - 30}%)` }}
+        style={{
+          backgroundColor: generateHslString({
+            hue: color.hue,
+            saturation: color.saturation + 20,
+            light: color.light - 30,
+          }),
+        }}
       >
         <div
           className={styles.skillIndicator}
           style={{
-            background: `linear-gradient(90deg, hsl(${hue + 20}, ${saturation + 30}%, ${light - 30}%) 0%, hsl(${
-              hue + 20
-            }, ${saturation + 30}%, ${light}%) 100%)`,
+            background: generateGradient(
+              { hue: color.hue, saturation: color.saturation + 30, light: color.light - 10 },
+              90,
+              { hue: 0, saturation: 0, light: 40 }
+            ),
             width: `${skill.score * 10}%`,
           }}
         >

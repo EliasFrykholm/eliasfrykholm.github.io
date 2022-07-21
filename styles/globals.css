@@ -1,8 +1,9 @@
 :root {
     --bg-color: #001122;
     --text-light: antiquewhite;
-    --primary-color: hsl(126, 16%, 56%);
+    --primary-color: hsl(126, 26%, 56%);
     --secondary-color: #213447;
+    --default-opacity: 0.7;
 }
 
 html,

@@ -5,10 +5,12 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import SkillGrid from "../components/SkillGrid";
 import WaveSection from "../components/WaveSection";
+import Counter from "../static/Counter";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   const [offsetY, setOffsetY] = useState(0);
+  const indexCounter = new Counter();
   const handleScroll = () => setOffsetY(window.scrollY);
 
   useEffect(() => {
@@ -43,7 +45,7 @@ const Home: NextPage = () => {
 
         <section id="experience">
           <h1>Experience</h1>
-          <WaveSection scrollOffset={offsetY} index={0}>
+          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()}>
             <h2>Cygni, Part of Accenture - Fullstack Engineer Consultant</h2>
             <h3>Malmö, Sweden - September 2021 - Now</h3>
             <p>
@@ -53,7 +55,7 @@ const Home: NextPage = () => {
               written during development for testing purposes. The application was then deployed using AWS Amplify.
             </p>
           </WaveSection>
-          <WaveSection scrollOffset={offsetY} index={1}>
+          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()}>
             <h2>Axis Communications - Master Thesis Student</h2>
             <h3>Lund, Sweden - October 2021 - June 2021</h3>
             <p>
@@ -69,7 +71,7 @@ const Home: NextPage = () => {
               due to using service mesh in a way it is not intended for.
             </p>
           </WaveSection>
-          <WaveSection scrollOffset={offsetY} index={2}>
+          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()}>
             <h2>Axis Communications - Master Thesis Student</h2>
             <h3>Lund, Sweden - October 2021 - June 2021</h3>
             <p>
@@ -85,7 +87,7 @@ const Home: NextPage = () => {
               due to using service mesh in a way it is not intended for.
             </p>
           </WaveSection>
-          <WaveSection scrollOffset={offsetY} index={3}>
+          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()}>
             <h2>Axis Communications - Master Thesis Student</h2>
             <h3>Lund, Sweden - October 2021 - June 2021</h3>
             <p>
@@ -101,7 +103,7 @@ const Home: NextPage = () => {
               due to using service mesh in a way it is not intended for.
             </p>
           </WaveSection>
-          <WaveSection scrollOffset={offsetY} index={4}>
+          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()}>
             <h2>Axis Communications - Master Thesis Student</h2>
             <h3>Lund, Sweden - October 2021 - June 2021</h3>
             <p>
@@ -117,7 +119,7 @@ const Home: NextPage = () => {
               due to using service mesh in a way it is not intended for.
             </p>
           </WaveSection>
-          <WaveSection scrollOffset={offsetY} index={5}>
+          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()}>
             <h2>Axis Communications - Master Thesis Student</h2>
             <h3>Lund, Sweden - October 2021 - June 2021</h3>
             <p>
@@ -133,7 +135,7 @@ const Home: NextPage = () => {
               due to using service mesh in a way it is not intended for.
             </p>
           </WaveSection>
-          <WaveSection isBottom={true} scrollOffset={offsetY} index={6}>
+          <WaveSection isBottom={true} scrollOffset={offsetY} colorIndex={indexCounter.getCount()}>
             <h2>Axis Communications - Master Thesis Student</h2>
             <h3>Lund, Sweden - October 2021 - June 2021</h3>
             <p>
@@ -152,7 +154,7 @@ const Home: NextPage = () => {
         </section>
         <section id="education">
           <h1>Education</h1>
-          <WaveSection scrollOffset={offsetY} index={1}>
+          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()}>
             <h2>Lund University - Master of Science, Computer Science</h2>
             <h3>Lund, Sweden - August 2016 - June 2021</h3>
             <p>
@@ -171,13 +173,16 @@ const Home: NextPage = () => {
         </section>
         <section id="skills">
           <h1>Skills</h1>
-          <SkillGrid
-            skills={[
-              { name: "Java", score: 9 },
-              { name: ".NET", score: 6 },
-              { name: "React JS", score: 7 },
-            ]}
-          ></SkillGrid>
+          <div className={styles.skillsContainer}>
+            <SkillGrid
+              skills={[
+                { name: "Java", score: 9 },
+                { name: ".NET", score: 6 },
+                { name: "React JS", score: 7 },
+              ]}
+              indexCounter={indexCounter}
+            ></SkillGrid>
+          </div>
         </section>
       </main>
     </div>
