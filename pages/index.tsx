@@ -6,14 +6,12 @@ import CardContainer from "../components/CardContainer";
 import Navbar from "../components/Navbar";
 import SkillGrid from "../components/SkillGrid";
 import WaveSection from "../components/WaveSection";
-import Counter from "../static/Counter";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   const [offsetY, setOffsetY] = useState(0);
   const [pageHeight, setPageHeight] = useState(0);
   const [coloredComponents, setColoredComponents] = useState<Element[]>([]);
-  const indexCounter = new Counter();
   const handleScroll = () => setOffsetY(window.scrollY);
   const handleResize = () => setPageHeight(document.body.scrollHeight - window.innerHeight);
 
@@ -37,7 +35,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Elias Frykholm - fullstack developer" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
+      <Navbar coloredComponents={coloredComponents} offsetY={offsetY} />
 
       <main
         style={{

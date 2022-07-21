@@ -7,7 +7,7 @@ type Props = {
   isBottom?: boolean;
   isTop?: boolean;
   scrollOffset: number;
-  coloredComponents?: Element[];
+  coloredComponents: Element[];
   children: React.ReactNode;
 };
 
