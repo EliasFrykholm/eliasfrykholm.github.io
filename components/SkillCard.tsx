@@ -1,6 +1,8 @@
 import styles from "../styles/SkillCard.module.css";
-import { generateColor, generateGradient, generateHslaString, generateHslString } from "../static/ColorGenerator";
-import CardContainer from "./CardContainer";
+import { generateColor, generateGradient, generateHslString, HslColor } from "../static/ColorGenerator";
+import { useEffect } from "react";
+import { useRef } from "react";
+import { useState } from "react";
 
 type Skill = {
   name: string;
@@ -9,15 +11,30 @@ type Skill = {
 
 type Props = {
   skill: Skill;
-  index: number;
+  key: string;
+  coloredComponents: Element[];
 };
 
-function SkillCard({ skill, index }: Props) {
-  const color = generateColor(index);
-  color.saturation += 10;
+function SkillCard({ skill, key, coloredComponents }: Props) {
+  const componentRef = useRef<HTMLDivElement>(null);
+  const [color, setColor] = useState<HslColor>(generateColor(0));
+
+  useEffect(() => {
+    const index = componentRef.current ? coloredComponents?.indexOf(componentRef.current) : 0;
+    const color = generateColor(index);
+    color.saturation += 10;
+    setColor(color);
+  }, [coloredComponents]);
 
   return (
-    <CardContainer index={index}>
+    <div
+      className={`${styles.card} coloredComponent`}
+      style={{
+        background: generateGradient(color, 45, { hue: 40, saturation: 30, light: 10 }, true),
+      }}
+      ref={componentRef}
+      key={key}
+    >
       <h2>{skill.name}</h2>
       <div
         className={styles.skillIndicatorContainer}
@@ -43,7 +60,7 @@ function SkillCard({ skill, index }: Props) {
           <h3 className={styles.levelText}>{skill.score}</h3>
         </div>
       </div>
-    </CardContainer>
+    </div>
   );
 }
 

@@ -1,13 +1,13 @@
 import { generateColor, generateHslString, generateHslaString } from "../static/ColorGenerator";
 import styles from "../styles/WaveSection.module.css";
 import Wave from "./Wave";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Props = {
   isBottom?: boolean;
   isTop?: boolean;
   scrollOffset: number;
-  colorIndex: number;
+  coloredComponents?: Element[];
   children: React.ReactNode;
 };
 
@@ -17,21 +17,24 @@ type Colors = {
   prevColor?: string;
 };
 
-function WaveSection({ isBottom = false, isTop = false, scrollOffset, colorIndex, children }: Props) {
+function WaveSection({ isBottom = false, isTop = false, scrollOffset, coloredComponents, children }: Props) {
   const [colors, setColors] = useState<Colors>();
+  const componentRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    const colorObj = generateColor(colorIndex);
+    const index = componentRef.current && coloredComponents ? coloredComponents?.indexOf(componentRef.current) : 0;
+    const colorObj = generateColor(index);
     const color = generateHslString(colorObj);
     const colorOpacity = generateHslaString(colorObj);
     var prevColor;
     if (!isTop) {
-      prevColor = generateHslString(generateColor(colorIndex - 1));
+      prevColor = generateHslString(generateColor(index - 1));
     }
     setColors({ color: color, colorOpacity: colorOpacity, prevColor: prevColor });
-  }, [setColors]);
+  }, [coloredComponents]);
 
   return (
-    <div>
+    <div className="coloredComponent" ref={componentRef}>
       <Wave scrollOffset={scrollOffset} color={colors?.color} previousColor={colors?.prevColor} />
       <div className={styles.container} style={{ backgroundColor: colors?.colorOpacity }}>
         {children}

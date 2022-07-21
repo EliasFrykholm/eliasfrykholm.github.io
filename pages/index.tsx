@@ -12,6 +12,7 @@ import styles from "../styles/Home.module.css";
 const Home: NextPage = () => {
   const [offsetY, setOffsetY] = useState(0);
   const [pageHeight, setPageHeight] = useState(0);
+  const [coloredComponents, setColoredComponents] = useState<Element[]>([]);
   const indexCounter = new Counter();
   const handleScroll = () => setOffsetY(window.scrollY);
   const handleResize = () => setPageHeight(document.body.scrollHeight - window.innerHeight);
@@ -20,6 +21,8 @@ const Home: NextPage = () => {
     addEventListener("scroll", handleScroll);
     addEventListener("resize", handleResize);
     setPageHeight(document.body.scrollHeight - window.innerHeight);
+
+    setColoredComponents(Array.from(document.getElementsByClassName("coloredComponent")));
 
     return () => {
       removeEventListener("scroll", handleScroll);
@@ -53,7 +56,7 @@ const Home: NextPage = () => {
                 Contact: <a href="mailto: elias.frykholm@outlook.com">elias.frykholm@outlook.com</a>
               </h2>
             </div>
-            <CardContainer index={indexCounter.getCount()} maxWidth="1000px">
+            <CardContainer coloredComponents={coloredComponents} maxWidth="1000px">
               <h3>
                 Hi! <br />
                 My name is Elias, I am a driven software developer who thrives on problem solving and I continuously aim
@@ -69,7 +72,7 @@ const Home: NextPage = () => {
 
         <section id="experience">
           <h1>Experience</h1>
-          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()} isTop>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents} isTop>
             <h2>Cygni, Part of Accenture - Fullstack Engineer Consultant</h2>
             <h3>Malmö, Sweden - September 2021 - Now</h3>
             <p>
@@ -79,7 +82,7 @@ const Home: NextPage = () => {
               written during development for testing purposes. The application was then deployed using AWS Amplify.
             </p>
           </WaveSection>
-          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()}>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents}>
             <h2>Axis Communications - Master Thesis Student</h2>
             <h3>Lund, Sweden - October 2021 - June 2021</h3>
             <p>
@@ -95,7 +98,7 @@ const Home: NextPage = () => {
               due to using service mesh in a way it is not intended for.
             </p>
           </WaveSection>
-          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()}>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents}>
             <h2>Nibe AB - Fullstack Developer</h2>
             <h3>Markaryd, Sweden (Remote)- June 2020 - September 2020 (Full-time)</h3>
             <h3>Markaryd, Sweden (Remote)- November 2020 - December 2020 (Part-time)</h3>
@@ -108,7 +111,7 @@ const Home: NextPage = () => {
               using React.js for the frontend together with Electron and backend in C# .NET Core.
             </p>
           </WaveSection>
-          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()}>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents}>
             <h2>Calmon Stepper Motor Technologies - Embedded Developer Summer Intern</h2>
             <h3>Karlshamn, Sweden - June 2019 - August 2019 (Full-time)</h3>
             <p>
@@ -118,7 +121,7 @@ const Home: NextPage = () => {
               electrical engineering and programming in C++.
             </p>
           </WaveSection>
-          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()} isBottom>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents} isBottom>
             <h2>Lund Formula Student - Embedded Developer</h2>
             <h3>Lund, Sweden - August 2019 - December 2020</h3>
             <p>
@@ -135,7 +138,7 @@ const Home: NextPage = () => {
         </section>
         <section id="education">
           <h1>Education & Certification</h1>
-          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()} isTop>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents} isTop>
             <h2>Lund University - Master of Science, Computer Science</h2>
             <h3>Lund, Sweden - August 2016 - June 2021</h3>
             <p>
@@ -151,7 +154,7 @@ const Home: NextPage = () => {
               due to using service mesh in a way it is not intended for.
             </p>
           </WaveSection>
-          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()}>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents}>
             <h2>Professional Scrum Master I (PSM I)</h2>
             <h3>April 2022 -</h3>
             <p>
@@ -164,7 +167,7 @@ const Home: NextPage = () => {
               Verify: <a href="https://www.credly.com/badges/afa64343-1040-4c6e-bdef-c5bde0c0400c">Credly</a>
             </h3>
           </WaveSection>
-          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()}>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents}>
             <h2>AWS Certified Solutions Architect - Associate (SAA-C02)</h2>
             <h3>June 2022 - June 2025</h3>
             <p>
@@ -176,7 +179,7 @@ const Home: NextPage = () => {
               Verify: <a>Credly</a>
             </h3>
           </WaveSection>
-          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()} isBottom>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents} isBottom>
             <h2>AWS Certified Cloud Practitioner (CLF-C01)</h2>
             <h3>June 2022 - June 2025</h3>
             <p>
@@ -191,7 +194,7 @@ const Home: NextPage = () => {
         </section>
         <section id="skills">
           <h1>Skills</h1>
-          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()} isTop isBottom>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents} isTop isBottom>
             <h2 style={{ textAlign: "center" }}>Programming</h2>
           </WaveSection>
           <SkillGrid
@@ -208,9 +211,9 @@ const Home: NextPage = () => {
               { name: "C", score: 4 },
               { name: "Haskell", score: 3 },
             ]}
-            indexCounter={indexCounter}
+            coloredComponents={coloredComponents}
           ></SkillGrid>
-          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()} isTop isBottom>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents} isTop isBottom>
             <h2 style={{ textAlign: "center" }}>Frameworks</h2>
           </WaveSection>
           <SkillGrid
@@ -229,9 +232,9 @@ const Home: NextPage = () => {
               { name: "Tensorflow", score: 3 },
               { name: "Keras", score: 3 },
             ]}
-            indexCounter={indexCounter}
+            coloredComponents={coloredComponents}
           ></SkillGrid>
-          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()} isTop isBottom>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents} isTop isBottom>
             <h2 style={{ textAlign: "center" }}>SCM and CI/CD</h2>
           </WaveSection>
           <SkillGrid
@@ -252,9 +255,9 @@ const Home: NextPage = () => {
               { name: "Tensorflow", score: 3 },
               { name: "Keras", score: 3 },
             ]}
-            indexCounter={indexCounter}
+            coloredComponents={coloredComponents}
           ></SkillGrid>
-          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()} isTop isBottom>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents} isTop isBottom>
             <h2 style={{ textAlign: "center" }}>Databases</h2>
           </WaveSection>
           <SkillGrid
@@ -265,9 +268,9 @@ const Home: NextPage = () => {
               { name: "Prometheus", score: 5 },
               { name: "Neo4J", score: 5 },
             ]}
-            indexCounter={indexCounter}
+            coloredComponents={coloredComponents}
           ></SkillGrid>
-          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()} isTop isBottom>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents} isTop isBottom>
             <h2 style={{ textAlign: "center" }}>Cloud</h2>
           </WaveSection>
           <SkillGrid
@@ -276,9 +279,9 @@ const Home: NextPage = () => {
               { name: "Azure", score: 6 },
               { name: "GCP", score: 4 },
             ]}
-            indexCounter={indexCounter}
+            coloredComponents={coloredComponents}
           ></SkillGrid>
-          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()} isTop isBottom>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents} isTop isBottom>
             <h2 style={{ textAlign: "center" }}>Methods & Processes</h2>
           </WaveSection>
           <SkillGrid
@@ -290,12 +293,12 @@ const Home: NextPage = () => {
               { name: "Mob Programming", score: 4 },
               { name: "XP", score: 3 },
             ]}
-            indexCounter={indexCounter}
+            coloredComponents={coloredComponents}
           ></SkillGrid>
         </section>
         <section id="projects">
           <h1>Projects</h1>
-          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()} isTop>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents} isTop>
             <h2>Movie Recommender</h2>
             <h3>
               Technologies: Java, Dart, Spring boot, Flutter, Microservices, Recommendation Engine, Graph Database,
@@ -330,7 +333,7 @@ const Home: NextPage = () => {
               which serves all the movie data.
             </p>
           </WaveSection>
-          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()}>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents}>
             <h2>Microservice Notes App</h2>
             <h3>
               Technologies: Java, Golang, TypeScript, Spring boot, React, Microservices, MongoDB, Docker, AWS,
@@ -362,7 +365,7 @@ const Home: NextPage = () => {
               docker images, publish the docker images and either deploy or update the infrastructure on AWS.
             </p>
           </WaveSection>
-          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()}>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents}>
             <h2>Dig-Bot</h2>
             <h3>Technologies: Java, TypeScript, React, WebSockets, Server-Client</h3>
             <p>
@@ -391,7 +394,7 @@ const Home: NextPage = () => {
               score which is based on collected points and the depth they got to.
             </p>
           </WaveSection>
-          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()} isBottom>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents} isBottom>
             <h2>Resumé Web Page</h2>
             <h3>Technologies: TypeScript, React, Next.js, CSS, Github Actions</h3>
             <p>
