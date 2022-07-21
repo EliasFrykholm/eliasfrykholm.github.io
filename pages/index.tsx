@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import CardContainer from "../components/CardContainer";
 import Navbar from "../components/Navbar";
 import SkillGrid from "../components/SkillGrid";
 import WaveSection from "../components/WaveSection";
@@ -10,13 +11,20 @@ import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   const [offsetY, setOffsetY] = useState(0);
+  const [pageHeight, setPageHeight] = useState(0);
   const indexCounter = new Counter();
   const handleScroll = () => setOffsetY(window.scrollY);
+  const handleResize = () => setPageHeight(document.body.scrollHeight - window.innerHeight);
 
   useEffect(() => {
     addEventListener("scroll", handleScroll);
+    addEventListener("resize", handleResize);
+    setPageHeight(document.body.scrollHeight - window.innerHeight);
 
-    return () => removeEventListener("scroll", handleScroll);
+    return () => {
+      removeEventListener("scroll", handleScroll);
+      removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
@@ -37,19 +45,25 @@ const Home: NextPage = () => {
         <section id="about">
           <div className={styles.about}>
             <Image src="./profile-image.jpeg" width={300} height={300} className={styles.avatar} />
-            <h1>Elias Frykholm</h1>
-            <h2>Msc. in Computer Science</h2>
-            <h2>Fullstack Engineer</h2>
-            <h2>
-              Contact: <a href="mailto: elias.frykholm@outlook.com">elias.frykholm@outlook.com</a>
-            </h2>
-            <h3>
-              Hi! My name is Elias, I am a driven developer who thrives on problem solving and I continuously aim to
-              learn new areas, both regarding new technologies and system development as a whole. I like to design and
-              understand software systems as a whole, but also to dive into the details. In my spare time, I am a social
-              and active person who likes to hangout with friends and exercise. I also often have ongoing hobby-projects
-              to try out the latest technologies and programming languages.
-            </h3>
+            <div className={styles.quickInfo}>
+              <h1>Elias Frykholm</h1>
+              <h2>Msc. in Computer Science</h2>
+              <h2>Fullstack Engineer</h2>
+              <h2>
+                Contact: <a href="mailto: elias.frykholm@outlook.com">elias.frykholm@outlook.com</a>
+              </h2>
+            </div>
+            <CardContainer index={indexCounter.getCount()} maxWidth="1000px">
+              <h3>
+                Hi! <br />
+                My name is Elias, I am a driven software developer who thrives on problem solving and I continuously aim
+                to learn new areas, both regarding new technologies and system development as a whole. <br />
+                <br /> I like to design and understand software systems as a whole, but also to dive into the details.
+                <br />
+                <br /> In my spare time, I am a social and active person who likes to hangout with friends and exercise.
+                I also often have ongoing hobby-projects to try out the latest technologies and programming languages.
+              </h3>
+            </CardContainer>
           </div>
         </section>
 
@@ -388,6 +402,14 @@ const Home: NextPage = () => {
             </p>
           </WaveSection>
         </section>
+        <div className={styles.outro}>
+          <h1 style={{ paddingTop: `${200 - Math.max(offsetY - (pageHeight - 150), 0)}px` }}>
+            Thanks for checking out my resumé page!
+          </h1>
+          <h2>
+            Feel free to contact me at <a href="mailto: elias.frykholm@outlook.com">elias.frykholm@outlook.com</a>
+          </h2>
+        </div>
       </main>
     </div>
   );

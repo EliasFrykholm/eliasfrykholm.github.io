@@ -18,6 +18,15 @@
     justify-content: space-around;
 }
 
+.quickInfo {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.quickInfo h2 {
+    margin-bottom: 1rem;
+}
+
 .about {
     position: relative;
     display: flex;
@@ -43,4 +52,9 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+.outro {
+    text-align: center;
+    height: 400px;
 }
