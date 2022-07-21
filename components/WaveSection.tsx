@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 type Props = {
   isBottom?: boolean;
+  isTop?: boolean;
   scrollOffset: number;
   colorIndex: number;
   children: React.ReactNode;
@@ -16,14 +17,14 @@ type Colors = {
   prevColor?: string;
 };
 
-function WaveSection({ isBottom = false, scrollOffset, colorIndex, children }: Props) {
+function WaveSection({ isBottom = false, isTop = false, scrollOffset, colorIndex, children }: Props) {
   const [colors, setColors] = useState<Colors>();
   useEffect(() => {
     const colorObj = generateColor(colorIndex);
     const color = generateHslString(colorObj);
     const colorOpacity = generateHslaString(colorObj);
     var prevColor;
-    if (colorIndex > 0) {
+    if (!isTop) {
       prevColor = generateHslString(generateColor(colorIndex - 1));
     }
     setColors({ color: color, colorOpacity: colorOpacity, prevColor: prevColor });
