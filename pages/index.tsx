@@ -177,7 +177,9 @@ const Home: NextPage = () => {
         </section>
         <section id="skills">
           <h1>Skills</h1>
-          <h2>Programming</h2>
+          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()} isTop isBottom>
+            <h2 style={{ textAlign: "center" }}>Programming</h2>
+          </WaveSection>
           <SkillGrid
             skills={[
               { name: "Java", score: 8 },
@@ -194,7 +196,9 @@ const Home: NextPage = () => {
             ]}
             indexCounter={indexCounter}
           ></SkillGrid>
-          <h2>Frameworks</h2>
+          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()} isTop isBottom>
+            <h2 style={{ textAlign: "center" }}>Frameworks</h2>
+          </WaveSection>
           <SkillGrid
             skills={[
               { name: "Spring Booot", score: 8 },
@@ -213,7 +217,9 @@ const Home: NextPage = () => {
             ]}
             indexCounter={indexCounter}
           ></SkillGrid>
-          <h2>SCM and CI/CD</h2>
+          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()} isTop isBottom>
+            <h2 style={{ textAlign: "center" }}>SCM and CI/CD</h2>
+          </WaveSection>
           <SkillGrid
             skills={[
               { name: "Git", score: 9 },
@@ -234,7 +240,9 @@ const Home: NextPage = () => {
             ]}
             indexCounter={indexCounter}
           ></SkillGrid>
-          <h2>Databases</h2>
+          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()} isTop isBottom>
+            <h2 style={{ textAlign: "center" }}>Databases</h2>
+          </WaveSection>
           <SkillGrid
             skills={[
               { name: "MongoDB", score: 8 },
@@ -245,7 +253,9 @@ const Home: NextPage = () => {
             ]}
             indexCounter={indexCounter}
           ></SkillGrid>
-          <h2>Cloud</h2>
+          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()} isTop isBottom>
+            <h2 style={{ textAlign: "center" }}>Cloud</h2>
+          </WaveSection>
           <SkillGrid
             skills={[
               { name: "AWS", score: 8 },
@@ -254,7 +264,9 @@ const Home: NextPage = () => {
             ]}
             indexCounter={indexCounter}
           ></SkillGrid>
-          <h2>Methods & Processes</h2>
+          <WaveSection scrollOffset={offsetY} colorIndex={indexCounter.getCount()} isTop isBottom>
+            <h2 style={{ textAlign: "center" }}>Methods & Processes</h2>
+          </WaveSection>
           <SkillGrid
             skills={[
               { name: "Agile", score: 8 },
