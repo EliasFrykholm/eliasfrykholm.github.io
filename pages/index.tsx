@@ -41,7 +41,7 @@ const Home: NextPage = () => {
       <main
         style={{
           backgroundPositionY: offsetY * 0.5,
-          backgroundImage: `url(${process.env.NODE_ENV == "production" ? "/my-resume" : ""}/background.svg)`,
+          backgroundImage: `url(/background.svg)`,
         }}
       >
         <section id="about">
