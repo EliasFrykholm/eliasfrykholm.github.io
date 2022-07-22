@@ -345,6 +345,9 @@ const Home: NextPage = () => {
               The application heavily relies on the open api movie database TMDB (<a>https://www.themoviedb.org/</a>)
               which serves all the movie data.
             </p>
+            <h3 className={styles.waveSectionFooter}>
+              Repo: <a href="https://github.com/EliasFrykholm/movie-recommender">Movie-Recommender</a>
+            </h3>
           </WaveSection>
           <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents}>
             <h2>Microservice Notes App</h2>
@@ -410,7 +413,7 @@ const Home: NextPage = () => {
               score which is based on collected points and the depth they got to.
             </p>
           </WaveSection>
-          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents} isBottom>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents}>
             <h2>Resume Web Page</h2>
             <h3>Technologies: TypeScript, React, Next.js, CSS, Github Actions</h3>
             <p>
@@ -418,6 +421,17 @@ const Home: NextPage = () => {
               components and styiling are custom built with CSS and SVG graphics. The page is built with a focus to have
               easily editable content.
             </p>
+            <h3 className={styles.waveSectionFooter}>
+              Repo: <a href="https://github.com/EliasFrykholm/eliasfrykholm.github.io">My-Resume</a>
+            </h3>
+          </WaveSection>
+          <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents} isBottom>
+            <h2>Flutter Chat App</h2>
+            <h3>Technologies: Flutter, Firebase</h3>
+            <p>This is a simple realtime online chat app, mainly created to try out Flutter and Firebase.</p>
+            <h3 className={styles.waveSectionFooter}>
+              Repo: <a href="https://github.com/EliasFrykholm/FlutterFire-Chat-App">FlutterFire-Chat-App</a>
+            </h3>
           </WaveSection>
         </section>
         <div className={styles.outro}>
