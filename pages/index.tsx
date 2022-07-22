@@ -377,6 +377,9 @@ const Home: NextPage = () => {
               application is developed for learning purposes. Github actions is setup to build the application, build
               docker images, publish the docker images and either deploy or update the infrastructure on AWS.
             </p>
+            <h3 className={styles.waveSectionFooter}>
+              Repo: <a href="https://github.com/EliasFrykholm/Microservice-Notes-App">Microservice-Notes-App</a>
+            </h3>
           </WaveSection>
           <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents}>
             <h2>Dig-Bot</h2>
