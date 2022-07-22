@@ -183,7 +183,7 @@ const Home: NextPage = () => {
           </WaveSection>
           <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents}>
             <h2>AWS Certified Solutions Architect - Associate (SAA-C02)</h2>
-            <h3>June 2022 - June 2025</h3>
+            <h3>In progress studying</h3>
             <p>
               This credential helps organizations identify and develop talent with critical knowledge related to
               implementing cloud initiatives. Earning AWS Certified Cloud Practitioner validates cloud fluency and
@@ -195,7 +195,7 @@ const Home: NextPage = () => {
           </WaveSection>
           <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents} isBottom>
             <h2>AWS Certified Cloud Practitioner (CLF-C01)</h2>
-            <h3>June 2022 - June 2025</h3>
+            <h3>In progress studying</h3>
             <p>
               This credential helps organizations identify and develop talent with critical skills for implementing
               cloud initiatives. Earning AWS Certified Solutions Architect - Associate validates the ability to design
