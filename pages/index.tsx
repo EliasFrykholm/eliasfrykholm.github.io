@@ -77,7 +77,7 @@ const Home: NextPage = () => {
             <p>
               Cygni, part of Accenture is a consultancy firm specialized in digital solutions. <br />
               <br />I have been part of the Talent Program at Cygni which focuses heavily on personalized competence
-              development and targets newly graduates in parallell to being on an assignment at a client. I have had the
+              development and targets newly graduates in parallel to being on an assignment at a client. I have had the
               opportunity to further develop my competence in areas such as AWS, Java Spring Boot, NoSQL databases,
               agile processes etc through this program.
             </p>
@@ -93,7 +93,7 @@ const Home: NextPage = () => {
               safety and camera surveillance. <br />
               <br /> I did my master thesis in monitoring of large scale distributed software systems. The goal of the
               thesis was to explore the possibilities of discovering different types of network faults between the nodes
-              in the systems, both within and outside kubernetes clusters using a recent technology, service mesh. This
+              in the systems, both within and outside Kubernetes clusters using a recent technology, service mesh. This
               involved creating a virtualized test-environment consisting of multiple virtual machines running different
               services, connected through a simulated network where faults could be introduced. A series of tests were
               carried out in order to evaluate if the faults could be discovered using the service mesh. <br />
@@ -143,7 +143,7 @@ const Home: NextPage = () => {
             <p>
               Formula student is a competition where a team of students develop and manufacture a smaller scale formula
               car and compete with other teams around Europe. The Lund Formula student team was a team of 70 students
-              and this year building two cars, one conbustion car and one concept electric car. Everyone was in a small
+              and this year building two cars, one combustion car and one concept electric car. Everyone was in a small
               team responsible for a certain subsystem of the car and I was responsible for the code in the custom built
               embedded systems. <br />
               <br />
@@ -320,15 +320,15 @@ const Home: NextPage = () => {
             </h3>
             <p>
               This was a personal project where i wanted to develop a mobile app for recommending movies, with the main
-              purpose of trying out some new technologies that i hadnt worked with previously such as graph database,
+              purpose of trying out some new technologies that i hadn't worked with previously such as graph database,
               recommendation engines and Flutter.
               <br />
               <br />
               The application is built using the cross-platform framework Flutter and has only been tested on Android
               but the framework should allow it to be exported for browser and ios. The backend is built using Java with
-              Spring Boot and consits of two microservices, one for all interactions towards the TMDB api and one for
+              Spring Boot and consist of two microservices, one for all interactions towards the TMDB api and one for
               database interactions towards the Neo4J graph database and providing recommendations. The recommendation
-              engine works by finding movies that other users has liked that has a history of likeing previous movies
+              engine works by finding movies that other users has liked that has a history of liking previous movies
               that the current user also has liked.
               <br />
               <br />
@@ -338,7 +338,7 @@ const Home: NextPage = () => {
               recommendation and the user can either swipe right or left on the artwork to like or dislike the movie.
               The user is also able to click on the artwork to get the movie description, see TMDB rating and a button
               to watch the trailer. If there are no recommendations for the current user, the application fetches movies
-              from the TMDB toplist and adds them to the recommendation engine for future users. There is no sign in
+              from the TMDB top-list and adds them to the recommendation engine for future users. There is no sign in
               required for the application, it only uses an unique id based on the device to identify the user.
               <br />
               <br />
@@ -359,16 +359,16 @@ const Home: NextPage = () => {
               <br />
               <br />
               The frontend for the application is built using React and the backend consists two services, one
-              authentification service (written in Golang) and one service for handling the notes (written in java) and
-              a MongoDB database for storing notes and user data. The application was deployed to an AWS EKS cluster
-              using Terraform and the process is fully automated with Github Actions.
+              authentication service (written in Golang) and one service for handling the notes (written in java) and a
+              MongoDB database for storing notes and user data. The application was deployed to an AWS EKS cluster using
+              Terraform and the process is fully automated with Github Actions.
               <br />
               <br />
               The frontend is a React application and is a traditional note taking interface built with Material UI
               displaying all the users notes, allows for editing of the notes, changing colors, token refreshing,
               searching for notes and with a login/signup component. The authentication for this application is built
               from scratch and utilizes JWT tokens and this is handled by the authentication service. Its
-              resposibilities are logins, signups, token validation and token refreshing. The notes service handles all
+              responsibilities are logins, signups, token validation and token refreshing. The notes service handles all
               updates to the notes and all api calls made to it is verified through the authentication service by the
               JWT token passed in the api calls before updating the note content in the MongoDB database. A large focus
               in this project was the deployment, the deployment to AWS EKS is done using terraform and all
@@ -382,7 +382,7 @@ const Home: NextPage = () => {
             <h2>Dig-Bot</h2>
             <h3>Technologies: Java, TypeScript, React, WebSockets, Server-Client</h3>
             <p>
-              Me together with some colleages at Cygni developed a game called Dig-Bot, it is a
+              Me together with some colleagues at Cygni developed a game called Dig-Bot, it is a
               semi-multiplayer/realtime game which tests the players coding skills. The game consists of a frontend
               built using react, a backend server in Java, and several client templates created in different popular
               languages.
@@ -408,7 +408,7 @@ const Home: NextPage = () => {
             </p>
           </WaveSection>
           <WaveSection scrollOffset={offsetY} coloredComponents={coloredComponents} isBottom>
-            <h2>Resumé Web Page</h2>
+            <h2>Resume Web Page</h2>
             <h3>Technologies: TypeScript, React, Next.js, CSS, Github Actions</h3>
             <p>
               This webpage is built using Next.js and automatically deployed to Github pages through Github Actions. The
@@ -419,7 +419,7 @@ const Home: NextPage = () => {
         </section>
         <div className={styles.outro}>
           <h1 style={{ paddingTop: `${200 - Math.max(offsetY - (pageHeight - 150), 0)}px` }}>
-            Thanks for checking out my resumé page!
+            Thanks for checking out my resume page!
           </h1>
           <h2>
             Feel free to contact me at <a href="mailto: elias.frykholm@outlook.com">elias.frykholm@outlook.com</a>
